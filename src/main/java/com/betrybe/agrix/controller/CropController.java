@@ -1,18 +1,18 @@
 package com.betrybe.agrix.controller;
 
-import com.betrybe.agrix.service.FarmService;
+import com.betrybe.agrix.service.CropService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/farms")
-public class FarmController {
+@RequestMapping(value = "/crops")
+public class CropController {
 
-  private final FarmService farmService;
+  private final CropService cropService;
 
   @Autowired
-  public FarmController(FarmService farmService) {
-    this.farmService = farmService;
+  public CropController(CropService cropService) {
+    this.cropService = cropService;
   }
 }

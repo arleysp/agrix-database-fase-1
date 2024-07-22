@@ -1,5 +1,7 @@
 package com.betrybe.agrix.controller;
 
+import com.betrybe.agrix.controller.dto.CropCreationDto;
+import com.betrybe.agrix.controller.dto.CropDto;
 import com.betrybe.agrix.controller.dto.FarmCreationDto;
 import com.betrybe.agrix.controller.dto.FarmDto;
 import com.betrybe.agrix.service.FarmService;
@@ -35,7 +37,7 @@ public class FarmController {
   }
 
   /**
-   * Create farm farm dto.
+   * Create farm dto.
    *
    * @param farmCreationDto the farm creation dto
    * @return the farm dto
@@ -71,5 +73,14 @@ public class FarmController {
   @GetMapping("/{id}")
   public FarmDto getById(@PathVariable Long id) throws FarmNotFoundException {
     return FarmDto.fromEntity(farmService.findById(id));
+  }
+
+  @PostMapping("/{id}/crops")
+  @ResponseStatus(HttpStatus.CREATED)
+  public CropDto createFarmCrop(@PathVariable Long id,
+      @RequestBody CropCreationDto cropCreationDto) throws FarmNotFoundException {
+    return CropDto.fromEntity(
+        farmService.createFarmCrop(id, cropCreationDto.toEntity())
+    );
   }
 }

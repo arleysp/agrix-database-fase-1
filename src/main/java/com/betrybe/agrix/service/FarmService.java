@@ -22,6 +22,7 @@ public class FarmService {
    * Instantiates a new Farm service.
    *
    * @param farmRepository the farm repository
+   * @param cropRepository the crop repository
    */
   @Autowired
   public FarmService(FarmRepository farmRepository, CropRepository cropRepository) {
@@ -29,19 +30,45 @@ public class FarmService {
     this.cropRepository = cropRepository;
   }
 
+  /**
+   * Create farm farm.
+   *
+   * @param farm the farm
+   * @return the farm
+   */
   public Farm createFarm(Farm farm) {
     return farmRepository.save(farm);
   }
 
+  /**
+   * Find all list.
+   *
+   * @return the list
+   */
   public List<Farm> findAll() {
     return farmRepository.findAll();
   }
 
+  /**
+   * Find by id farm.
+   *
+   * @param id the id
+   * @return the farm
+   * @throws FarmNotFoundException the farm not found exception
+   */
   public Farm findById(Long id) throws FarmNotFoundException {
     return farmRepository.findById(id)
         .orElseThrow(FarmNotFoundException::new);
   }
 
+  /**
+   * Create farm crop crop.
+   *
+   * @param id   the id
+   * @param crop the crop
+   * @return the crop
+   * @throws FarmNotFoundException the farm not found exception
+   */
   public Crop createFarmCrop(Long id, Crop crop) throws FarmNotFoundException {
     Farm farm = farmRepository.findById(id)
         .orElseThrow(FarmNotFoundException::new);

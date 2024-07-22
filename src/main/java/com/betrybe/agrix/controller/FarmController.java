@@ -75,6 +75,14 @@ public class FarmController {
     return FarmDto.fromEntity(farmService.findById(id));
   }
 
+  /**
+   * Create farm crop crop dto.
+   *
+   * @param id              the id
+   * @param cropCreationDto the crop creation dto
+   * @return the crop dto
+   * @throws FarmNotFoundException the farm not found exception
+   */
   @PostMapping("/{id}/crops")
   @ResponseStatus(HttpStatus.CREATED)
   public CropDto createFarmCrop(@PathVariable Long id,

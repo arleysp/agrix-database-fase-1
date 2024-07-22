@@ -32,7 +32,7 @@ public class Crop {
   /**
    * Instantiates a new Crop.
    *
-   * @param name         the name
+   * @param name        the name
    * @param plantedArea the planted area
    */
   public Crop(String name, Double plantedArea) {
@@ -76,18 +76,38 @@ public class Crop {
     this.name = name;
   }
 
+  /**
+   * Gets planted area.
+   *
+   * @return the planted area
+   */
   public Double getPlantedArea() {
     return plantedArea;
   }
 
+  /**
+   * Sets planted area.
+   *
+   * @param plantedArea the planted area
+   */
   public void setPlantedArea(Double plantedArea) {
     this.plantedArea = plantedArea;
   }
 
+  /**
+   * Gets farm.
+   *
+   * @return the farm
+   */
   public Farm getFarm() {
     return farm;
   }
 
+  /**
+   * Sets farm.
+   *
+   * @param farm the farm
+   */
   public void setFarm(Farm farm) {
     this.farm = farm;
   }

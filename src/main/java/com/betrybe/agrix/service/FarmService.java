@@ -1,5 +1,6 @@
 package com.betrybe.agrix.service;
 
+import com.betrybe.agrix.entity.Farm;
 import com.betrybe.agrix.repository.FarmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,9 @@ public class FarmService {
   @Autowired
   public FarmService(FarmRepository farmRepository) {
     this.farmRepository = farmRepository;
+  }
+
+  public Farm createFarm (Farm farm) {
+    return farmRepository.save(farm);
   }
 }

@@ -1,8 +1,11 @@
 package com.betrybe.agrix.service;
 
+import com.betrybe.agrix.entity.Crop;
 import com.betrybe.agrix.repository.CropRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * The type Crop service.
@@ -21,4 +24,14 @@ public class CropService {
   public CropService(CropRepository cropRepository) {
     this.cropRepository = cropRepository;
   }
+
+  /**
+   * Find all list.
+   *
+   * @return the list
+   */
+  public List<Crop> findAll() {
+    return cropRepository.findAll();
+  }
+
 }

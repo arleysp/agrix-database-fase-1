@@ -27,7 +27,7 @@ public class Crop {
    * Instantiates a new Crop.
    *
    * @param name         the name
-   * @param planted_area the planted area
+   * @param plantedArea the planted area
    */
   public Crop(String name, Double plantedArea) {
     this.name = name;

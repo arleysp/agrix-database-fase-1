@@ -18,7 +18,7 @@ public class Crop {
   private Long id;
 
   private String name;
-  private Double planted_area;
+  private Double plantedArea;
 
   private Crop() {
   }
@@ -29,9 +29,9 @@ public class Crop {
    * @param name         the name
    * @param planted_area the planted area
    */
-  public Crop(String name, Double planted_area) {
+  public Crop(String name, Double plantedArea) {
     this.name = name;
-    this.planted_area = planted_area;
+    this.plantedArea = plantedArea;
   }
 
   /**
@@ -70,21 +70,11 @@ public class Crop {
     this.name = name;
   }
 
-  /**
-   * Gets planted area.
-   *
-   * @return the planted area
-   */
-  public Double getPlanted_area() {
-    return planted_area;
+  public Double getPlantedArea() {
+    return plantedArea;
   }
 
-  /**
-   * Sets planted area.
-   *
-   * @param planted_area the planted area
-   */
-  public void setPlanted_area(Double planted_area) {
-    this.planted_area = planted_area;
+  public void setPlantedArea(Double plantedArea) {
+    this.plantedArea = plantedArea;
   }
 }
